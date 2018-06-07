@@ -34,8 +34,10 @@
     background-color: #F2203B;
     font-family: 'Lakki Reddy', cursive;
     font-size: 20px;
+    border: 2px black solid;
 }
 
 .button:hover {
     color: #FFD49E;
+    background-color: #7F3340
 }
