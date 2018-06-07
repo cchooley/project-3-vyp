@@ -1,0 +1,14 @@
+.staffCard {
+    display: flex;
+    flex-flow: row;
+}
+
+.staffPic {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.staffPic, .staffBlurb {
+    margin: 20px
+}
+

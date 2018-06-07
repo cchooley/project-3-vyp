@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+.seussicalImg {
+    max-width: 50%;
+    max-height: 50%;
+    margin: 15px;
+}
+
+.header {
+    font-weight: 300;
+    text-align: center
+}
+
+.bodyText {
+    margin: 20px 50px 20px 50px;
+}
+
+.bold {
+    font-weight: bold
+}
+
+.center {
+    text-align: center
+}
+
+.button {
+    margin: 5px;
+    text-decoration: none;
+    padding: 15px 15px 5px 15px;
+    border-radius: 25px;
+    color: #FFF051;
+    background-color: #F2203B;
+    font-family: 'Lakki Reddy', cursive;
+    font-size: 20px;
+}
+
+.button:hover {
+    color: #FFD49E;
+}

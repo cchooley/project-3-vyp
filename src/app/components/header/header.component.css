@@ -1,0 +1,38 @@
+header {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px #765B7F solid;
+    background-color: #FFD49E;
+}
+
+#vypLogo {
+    height: 100px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#navbar {
+    margin: 20px;
+    background-color: #5B2D6C;
+    border: 3px #CC8E42 solid;
+    padding: 8px;
+}
+
+a {
+    margin: 5px;
+    color: #FFD49E;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ECB7FF
+}
+
+/*
+Purples: 5B2D6C, ECB7FF, D76AFF, 765B7F, AC55CC
+Golds: FFB252, FFD49E, FFB252, 7F6A4F, CC8E42
+
+
+*/
