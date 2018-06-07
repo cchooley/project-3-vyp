@@ -9,6 +9,7 @@ import { AboutComponent } from './components/about/about.component';
 import { SeussicalComponent } from './components/seussical/seussical.component';
 import { EnrollComponent } from './components/enroll/enroll.component';
 import { ScholarshipComponent } from './components/scholarship/scholarship.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -20,7 +21,8 @@ import { ScholarshipComponent } from './components/scholarship/scholarship.compo
     AboutComponent,
     SeussicalComponent,
     EnrollComponent,
-    ScholarshipComponent
+    ScholarshipComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
