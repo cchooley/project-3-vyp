@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing-module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -10,8 +12,12 @@ import { SeussicalComponent } from './components/seussical/seussical.component';
 import { EnrollComponent } from './components/enroll/enroll.component';
 import { ScholarshipComponent } from './components/scholarship/scholarship.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { EnrollmentComponent } from './components/enrollment/enrollment.component';
+
+import { HttpService } from './services/http.service';
 
 
+HttpClientModule
 
 @NgModule({
   declarations: [
@@ -22,13 +28,18 @@ import { FooterComponent } from './components/footer/footer.component';
     SeussicalComponent,
     EnrollComponent,
     ScholarshipComponent,
-    FooterComponent
+    FooterComponent,
+    EnrollmentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    HttpService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,78 @@
+main {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around
+}
+
+section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px 20px 30px 20px;
+    background-color: #FFD49E;
+    border: 3px #765B7F solid;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+}
+
+input, label, select {
+    margin: 3px 0px;
+}
+
+input, select {
+    background-color: #E5ECFF
+}
+
+.sLink {
+    margin-top: 10px;
+    text-decoration: none;
+    padding: 15px 15px 5px 15px;
+    border-radius: 25px;
+    color: #FFF051;
+    background-color: #F2203B;
+    font-family: 'Lakki Reddy', cursive;
+    font-size: 20px;
+    border: 2px black solid;
+    animation: changeBack 1s;
+}
+
+.sLink:hover {
+    color: #FFFF21;
+    background-color: #A7C7E5;
+    animation-name: change;
+    animation-duration: 1s;
+    transform: rotate(2deg)
+}
+
+@keyframes change {
+    from {
+        background-color: #F2203B; 
+        color: #FFD49E;
+        transform: rotate(0deg)
+    }
+    to {background-color: #A7C7E5; 
+        color: #FFFF21;
+        transform: rotate(2deg)
+    }
+}
+
+@keyframes changeBack {
+    from {background-color: #A7C7E5; 
+        color: #FFFF21;
+        transform: rotate(2deg)
+    }
+    to {
+    background-color: #F2203B; 
+    color: #FFD49E;
+    transform: rotate(0deg)
+    }
+}
+
+alert {
+    background-color: red
+}

@@ -6,6 +6,7 @@ import { SeussicalComponent } from './components/seussical/seussical.component';
 import { AboutComponent } from './components/about/about.component';
 import { EnrollComponent } from './components/enroll/enroll.component';
 import { ScholarshipComponent } from './components/scholarship/scholarship.component';
+import { EnrollmentComponent } from './components/enrollment/enrollment.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,13 +15,14 @@ const appRoutes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'enroll', component: EnrollComponent },
     { path: 'scholarship', component: ScholarshipComponent },
+    { path: 'roster', component: EnrollmentComponent },
 ];
 
 @NgModule({
     imports: [
         RouterModule.forRoot(
             appRoutes,
-            { enableTracing: true } // <-- debugging purposes only
+            { enableTracing: false } // <-- debugging purposes only
         )
     ],
     exports: [

@@ -1,0 +1,9 @@
+<ul *ngFor="let student of studentArr">
+  <li>Name: {{student.name}}
+    <br>Student ID: {{student.id}}
+    <br>Age: {{student.age}}
+    <br>Enrollment Date: {{student.enrolledOn}}
+    <br><span *ngIf="student.scholarship === true">Has scholarship.</span>
+        <span *ngIf="student.scholarship !== true">Paid student.</span>
+  </li>
+</ul>

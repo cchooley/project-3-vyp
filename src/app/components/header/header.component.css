@@ -19,6 +19,7 @@ header {
     background-color: #5B2D6C;
     border: 3px #CC8E42 solid;
     padding: 8px;
+    position: relative
 }
 
 a {

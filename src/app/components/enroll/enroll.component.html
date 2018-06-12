@@ -1,3 +1,33 @@
-<p>
-  enroll works!
-</p>
+<main>
+<section class="leftSide">
+    <h2>Enroll today!</h2>
+    <form #jobForm="ngForm">
+      <label for="name">Student Name:</label>
+      <input type="text" name="name" id="sName" [(ngModel)]="model.name">
+      <label for="age">Student Age:</label>
+      <input type="number" name="age" id="sAge" [(ngModel)]="model.age">
+      <label for="scholarship">Payment Method:</label>
+      <select name="boolean" id="sPayment" [(ngModel)]="model.scholarship">
+        <option value=true>Credit Card</option>
+        <option value=false>Scholarship</option>
+      </select>
+      <input type="submit" 
+        class="sLink" 
+        name="submit" 
+        value="Sign Me Up!" 
+        *ngIf="model.scholarship === true" 
+        (click)="onClick(this.model)">
+      <a class="sLink"
+        value="Sign Me Up!" 
+        *ngIf="model.scholarship !== true" 
+        routerLink="/scholarship" 
+        routerLinkActive="active">Sign Me Up!</a>
+    </form>
+</section>
+<section class="rightSide">
+  <h3>You're just a few steps away from an unforgettable learning experience!</h3>
+  <p>Please fill out the form to your left with your student's full name, age (ages 6-13 only), and your method of payment.</p>
+  <p>Scholarship students will be directed to a form to validate your scholarship information.</p>
+  <p>All other enrollees must pay with a valid major credit card.</p>
+</section>
+</main>
