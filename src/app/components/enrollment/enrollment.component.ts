@@ -9,10 +9,10 @@ import { Observable, Subject } from 'rxjs';
   styleUrls: ['./enrollment.component.css']
 })
 export class EnrollmentComponent implements OnInit {
-  students: Object
   student: Subject<Student>
   studentArr: Array<Student>
   scholarships: Boolean
+  editStudent: Student
 
   constructor(
     private _httpService: HttpService,
@@ -20,8 +20,8 @@ export class EnrollmentComponent implements OnInit {
 
   ngOnInit(): void {
     this._httpService.getStudents().subscribe(students => {
-      this.students = students
       this.studentArr = Object.values(students)[0]
+      console.log(this.studentArr)
     })
   }
 
@@ -31,7 +31,10 @@ export class EnrollmentComponent implements OnInit {
     })
   }
 
-  delete(student){
-    this._httpService.deleteStudent(student)
+  delete(student: Student): void {
+    console.log(typeof student.id)
+    this.studentArr = this.studentArr.filter(s => s !== student);
+    this._httpService.deleteStudent(student.id).subscribe();
   }
+
 }

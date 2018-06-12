@@ -14,24 +14,21 @@ export class EnrollComponent implements OnInit {
     enrolledOn: new Date(),
     scholarship: true
   }
-  students: Object
   studentArr: Array<Student>
 
   constructor(private _httpService: HttpService) { }
 
   ngOnInit(): void {
     this._httpService.getStudents().subscribe(students => {
-      this.students = students
       this.studentArr = Object.values(students)[0]
     })
   }
 
   onClick(model): void {
     event.preventDefault()
-    if (this.model.age >= 6 && this.model.age <= 13) {
+    if (this.model.age >= 6 && this.model.age <= 13 && this.model.name !== '') {
     this._httpService.postStudent(this.model)
       .subscribe(student => this.studentArr.push(student))
-    console.log(this.studentArr)
     this.model = {
       name: '',
       age: null,
@@ -39,7 +36,7 @@ export class EnrollComponent implements OnInit {
       scholarship: false
       }
     } else {
-      alert("Student must be between age of 6 and 13")
+      alert("Please fill in the required fields with a valid name and age.")
     }
   }
 }

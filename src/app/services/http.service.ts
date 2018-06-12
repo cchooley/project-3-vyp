@@ -4,10 +4,12 @@ import { HttpModule, Http, URLSearchParams, Headers, RequestOptions } from '@ang
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
 import { Student } from '../models/student';
+import { log } from 'util';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Authorization': 'my-auth-token'
   })
 };
 
@@ -17,12 +19,7 @@ const httpOptions = {
 export class HttpService {
   url = `https://cch-vyp-p3.herokuapp.com/students`
   student: Subject<Student>
-  model: object
-  options = {
-    headers: new Headers({
-      'Content-Type': 'application/json'
-    })
-  }
+  id: number
 
   constructor(private _http: HttpClient) {
     this.student = new Subject()
@@ -36,11 +33,16 @@ export class HttpService {
     return this._http.post<Student>(this.url, student, httpOptions)
     }
 
-  editStudent(student: Student): Observable<Student> {
+  updateStudent(student: Student): Observable<Student> {
+    httpOptions.headers = 
+      httpOptions.headers.set('Authorization', 'my-new-auth-token')
+
     return this._http.put<Student>(this.url, student, httpOptions)
   }
 
-  deleteStudent(student: Student): Observable<{}> {
+  deleteStudent(id: number): Observable<{}> {
+    const url = `${this.url}/${id}`
+    console.log("Confirming url:" + url)
     return this._http.delete(this.url, httpOptions)
   }
 }
