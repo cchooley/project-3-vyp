@@ -9,6 +9,7 @@ import { HttpService } from '../../services/http.service';
 })
 export class EnrollComponent implements OnInit {
   model: Student = {
+    id: 0,
     name: '',
     age: null,
     enrolledOn: new Date(),
@@ -24,16 +25,21 @@ export class EnrollComponent implements OnInit {
     })
   }
 
+  trimDate(student) {
+      return student.enrolledOn.slice(0, 10)
+  }
+
   onClick(model): void {
     event.preventDefault()
     if (this.model.age >= 6 && this.model.age <= 13 && this.model.name !== '') {
-    this._httpService.postStudent(this.model)
-      .subscribe(student => this.studentArr.push(student))
-    this.model = {
-      name: '',
-      age: null,
-      enrolledOn: null,
-      scholarship: false
+      this._httpService.postStudent(this.model)
+        .subscribe(student => this.studentArr.push(student))
+      this.model = {
+        id: 0,
+        name: '',
+        age: null,
+        enrolledOn: null,
+        scholarship: false
       }
     } else {
       alert("Please fill in the required fields with a valid name and age.")

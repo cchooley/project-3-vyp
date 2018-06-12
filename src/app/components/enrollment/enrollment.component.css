@@ -1,0 +1,37 @@
+h2 {
+    margin: 15px;
+}
+    
+    .studentCard {
+    max-width: 500px;
+    border: 1px #765B7F solid;
+    background-color: rgb(196, 188, 199);
+    list-style-type: none;
+    margin: 15px
+}
+
+button {
+    margin: 2px;
+    font-size: 12px;
+    background-color: #765B7F;
+    color: #FFD49E;
+    border: 1px #FFD49E solid;
+}
+
+div {
+    margin: 5px;
+    padding: 1px;
+}
+
+div:nth-of-type(odd) {
+    background: #e0e0e0;
+}
+
+div:nth-of-type(even) {
+    background: #FFD49E
+}
+
+input {
+    background-color: #765B7F;
+    color: white;
+}

@@ -36,14 +36,13 @@ export class HttpService {
   updateStudent(student: Student): Observable<Student> {
     httpOptions.headers = 
       httpOptions.headers.set('Authorization', 'my-new-auth-token')
-
-    return this._http.put<Student>(this.url, student, httpOptions)
+    const url = `${this.url}/${student.id}`
+    return this._http.put<Student>(url, student, httpOptions)
   }
 
   deleteStudent(id: number): Observable<{}> {
     const url = `${this.url}/${id}`
-    console.log("Confirming url:" + url)
-    return this._http.delete(this.url, httpOptions)
+    return this._http.delete(url, httpOptions)
   }
 }
   

@@ -25,16 +25,24 @@ export class EnrollmentComponent implements OnInit {
     })
   }
 
-  trimDate(students) {
-    return students.map((student, index) => {
-      return student.enrolledOn.slice(0, 10)
-    })
+  edit(student) {
+    this.editStudent = student
+  }
+
+  update() {
+    if (this.editStudent) {
+      this._httpService.updateStudent(this.editStudent)
+        .subscribe(student => {
+          const ix = student ? this.studentArr.findIndex(s => s.id === student.id) : -1;
+          if (ix > -1) { this.studentArr[ix] = student; }
+        });
+      this.editStudent = undefined;
+    }
   }
 
   delete(student: Student): void {
-    console.log(typeof student.id)
-    this.studentArr = this.studentArr.filter(s => s !== student);
-    this._httpService.deleteStudent(student.id).subscribe();
+    this.studentArr = this.studentArr.filter(s => s !== student)
+    this._httpService.deleteStudent(student.id).subscribe()
   }
 
 }

@@ -30,7 +30,7 @@
     text-decoration: none;
     padding: 15px 15px 5px 15px;
     border-radius: 25px;
-    color: #FFF051;
+    color: #FFFF21;
     background-color: #F2203B;
     font-family: 'Lakki Reddy', cursive;
     font-size: 20px;
@@ -39,7 +39,6 @@
 }
 
 .sLink:hover {
-    color: #FFFF21;
     background-color: #A7C7E5;
     animation-name: change;
     animation-duration: 1s;
@@ -49,23 +48,19 @@
 @keyframes change {
     from {
         background-color: #F2203B; 
-        color: #FFD49E;
         transform: rotate(0deg)
     }
     to {background-color: #A7C7E5; 
-        color: #FFFF21;
         transform: rotate(2deg)
     }
 }
 
 @keyframes changeBack {
     from {background-color: #A7C7E5; 
-        color: #FFFF21;
         transform: rotate(2deg)
     }
     to {
     background-color: #F2203B; 
-    color: #FFD49E;
     transform: rotate(0deg)
     }
 }

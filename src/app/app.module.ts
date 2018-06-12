@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { EnrollmentComponent } from './components/enrollment/enrollment.component';
 
 import { HttpService } from './services/http.service';
+import { StripeComponent } from './components/stripe/stripe.component';
 
 
 HttpClientModule
@@ -29,7 +30,8 @@ HttpClientModule
     EnrollComponent,
     ScholarshipComponent,
     FooterComponent,
-    EnrollmentComponent
+    EnrollmentComponent,
+    StripeComponent
   ],
   imports: [
     BrowserModule,
