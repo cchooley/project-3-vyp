@@ -38,7 +38,7 @@ export class EnrollmentComponent implements OnInit {
     this.editScholarship = scholarship
   }
 
-  update() {
+  updateStudent() {
     if (this.editStudent) {
       this._httpService.updateStudent(this.editStudent)
         .subscribe(student => {
@@ -46,6 +46,17 @@ export class EnrollmentComponent implements OnInit {
           if (ix > -1) { this.studentArr[ix] = student; }
         });
       this.editStudent = undefined;
+    }
+  }
+
+  updateScholarship() {
+    if (this.editScholarship) {
+      this._httpService.updateScholarship(this.editScholarship)
+        .subscribe(scholarship => {
+          const ix = scholarship ? this.studentArr.findIndex(s => s.id === scholarship.id) : -1;
+          if (ix > -1) { this.scholArr[ix] = scholarship; }
+        });
+      this.editScholarship = undefined;
     }
   }
 

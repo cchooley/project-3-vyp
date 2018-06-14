@@ -49,7 +49,14 @@ export class EnrollComponent implements OnInit {
   onClick(model): void {
     event.preventDefault()
     model.id = this.studentArr.length + 1
-    if (this.model.age >= 6 && this.model.age <= 13 && this.model.name !== '') {
+    if (this.model.age >= 6 
+      && this.model.age <= 13 
+      && this.model.name !== ''
+      && this.model.contactEmail !== ''
+      && this.model.emergencyContact !== ''
+      && this.model.contactRelation !== ''
+      && this.model.contactPhone.length === 10
+      && this.model.scholarship) {
       this._httpService.postStudent(this.model)
         .subscribe(student => this.studentArr.push(student))
       this.model = {
@@ -64,7 +71,7 @@ export class EnrollComponent implements OnInit {
         scholarship: false
       }
     } else {
-      alert("Please fill in the required fields with a valid name and age.")
+      alert("Please fill in all required fields as instructed")
     }
   }
 

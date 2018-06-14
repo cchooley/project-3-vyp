@@ -32,8 +32,8 @@
       </div>
       <div class="bContainer">
         <button *ngIf="student!==editStudent" (click)=editStudentInfo(student)>Edit</button>
-        <button *ngIf="student===editStudent" (click)=update()>Save</button>
-        <button (click)=delete(student)>Delete</button>
+        <button *ngIf="student===editStudent" (click)=updateStudent()>Save</button>
+        <button (click)=deleteStudent(student)>Delete</button>
       </div>
     </section>
   </div>
@@ -48,11 +48,16 @@
         <span class="studentId">{{scholarship.id}}</span>
       </div>
       <div>
-        <span class="stripe1" *ngIf="student===editStudent">Verified By: {{scholarship.verifiedBy}}</span>
+        <span class="stripe1" *ngIf="scholarship!==editScholarship">Verified By: {{scholarship.verifiedBy}}</span>
+        <select class="stripe1" *ngIf="scholarship===editScholarship" [(ngModel)]="scholarship.verifiedBy">
+          <option>Liz Nye</option>
+          <option>Deb Flomberg</option>
+          <option>Seth Maisel</option>
+        </select>
       </div>
       <div class="bContainer">
-        <button *ngIf="student!==editStudent" (click)=editScholInfo(scholarship)>Edit</button>
-        <button *ngIf="student===editStudent" (click)=update()>Save</button>
+        <button *ngIf="scholarship!==editScholarship" (click)=editScholInfo(scholarship)>Edit</button>
+        <button *ngIf="scholarship===editScholarship" (click)=updateScholarship()>Save</button>
         <button (click)=delete(student)>Delete</button>
       </div>
     </section>
