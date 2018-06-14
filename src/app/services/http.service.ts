@@ -4,7 +4,7 @@ import { HttpModule, Http, URLSearchParams, Headers, RequestOptions } from '@ang
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
 import { Student } from '../models/student';
-import { log } from 'util';
+import { Scholarship } from '../models/scholarship';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -17,7 +17,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class HttpService {
-  url = `https://cch-vyp-p3.herokuapp.com/students`
+  url = `https://vypheroku.herokuapp.com`
   student: Subject<Student>
   id: number
 
@@ -26,24 +26,41 @@ export class HttpService {
   }
 
   getStudents(): Observable<Student> {
-    return this._http.get<Student>(this.url)
+    return this._http.get<Student>(`${this.url}/students`)
+  }
+
+  getScholarships(): Observable<Scholarship> {
+    return this._http.get<Scholarship>(`${this.url}/scholarships`)
   }
 
   postStudent(student: Student): Observable<Student> {
-    return this._http.post<Student>(this.url, student, httpOptions)
+    return this._http.post<Student>(`${this.url}/students`, student, httpOptions)
     }
 
   updateStudent(student: Student): Observable<Student> {
     httpOptions.headers = 
       httpOptions.headers.set('Authorization', 'my-new-auth-token')
-    const url = `${this.url}/${student.id}`
+    const url = `${this.url}/students/${student.id}`
     return this._http.put<Student>(url, student, httpOptions)
   }
 
+  updateScholarship(scholarship: Scholarship): Observable<Scholarship> {
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'my-new-auth-token')
+    const url = `${this.url}/scholarships/${scholarship.id}`
+    return this._http.put<Scholarship>(url, scholarship, httpOptions)
+  }
+
   deleteStudent(id: number): Observable<{}> {
-    const url = `${this.url}/${id}`
+    const url = `${this.url}/students/${id}`
     return this._http.delete(url, httpOptions)
   }
+
+  deleteScholarship(id: number): Observable<{}> {
+    const url = `${this.url}/scholarships/${id}`
+    return this._http.delete(url, httpOptions)
+  }
+
 }
   
 

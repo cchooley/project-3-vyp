@@ -15,7 +15,7 @@ const appRoutes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'enroll', component: EnrollComponent },
     { path: 'scholarship', component: ScholarshipComponent },
-    { path: 'admin', component: EnrollmentComponent },
+    { path: 'admin', component: EnrollmentComponent }
 ];
 
 @NgModule({

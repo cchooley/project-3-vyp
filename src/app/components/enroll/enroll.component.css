@@ -1,7 +1,8 @@
 main {
     display: flex;
     flex-flow: row;
-    justify-content: space-around
+    justify-content: space-around;
+    background-color: #e0e0e0
 }
 
 section {
@@ -13,11 +14,12 @@ section {
     padding: 10px 20px 30px 20px;
     background-color: #FFD49E;
     border: 3px #765B7F solid;
+    min-width: 25%
 }
 
 form {
     display: flex;
-    flex-flow: column;
+    flex-flow: column
 }
 
 input, label, select {
@@ -69,5 +71,22 @@ input, select {
 }
 
 .rightSide {
-    max-width: 60%
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    width: 70%
+}
+
+.imgContainer {
+    display: flex;
+    flex-flow: row;
+    padding: 20px;
+    width: 100%;
+    justify-content: space-evenly
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+    border: 3px #765B7F solid;
 }

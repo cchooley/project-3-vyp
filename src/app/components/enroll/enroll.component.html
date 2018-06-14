@@ -6,6 +6,18 @@
       <input type="text" name="name" id="sName" [(ngModel)]="model.name">
       <label for="age">Student Age:</label>
       <input type="number" name="age" id="sAge" [(ngModel)]="model.age">
+      <label for="email">Student E-Mail:</label>
+      <input type="text" name="email" id="sEmail" [(ngModel)]="model.contactEmail">
+      <label for="emergencyContact">Emergency Contact:</label>
+      <input type="text" name="emergencyContact" id="sEContact" [(ngModel)]="model.emergencyContact">
+      <label for="relationship">Contact Relation:</label>
+      <select name="relationship" id="sGuardian" [(ngModel)]="model.contactRelation">
+        <option>Father</option>
+        <option>Mother</option>
+        <option>Legal Guardian</option>
+      </select>
+      <label for="contactPhone">Contact Phone:</label>
+      <input type="text" name="contactPhone" id="sCPhone" [(ngModel)]="model.contactPhone">
       <label for="scholarship">Payment Method:</label>
       <select name="boolean" id="sPayment" [(ngModel)]="model.scholarship">
         <option value=true>Credit Card</option>
@@ -14,14 +26,14 @@
       <input type="submit" 
         class="sLink" 
         name="submit" 
-        value="Sign Me Up!" 
-        *ngIf="model.scholarship === true" 
+        value="Credit Card" 
+        *ngIf="model.scholarship !== true" 
         (click)="onClick(this.model)">
       <a class="sLink"
-        value="Sign Me Up!" 
-        *ngIf="model.scholarship !== true" 
+        value="Scholarship" 
+        *ngIf="model.scholarship === true" 
         routerLink="/scholarship" 
-        routerLinkActive="active">Sign Me Up!</a>
+        routerLinkActive="active">Scholarship</a>
     </form>
 </section>
 <section class="rightSide">
@@ -31,7 +43,10 @@
   <p>All other enrollees must pay  a one-time fee of $325 with a valid major credit card. Please fill out the form and you will
     be redirected to our secure payment processing service using Stripe.
   </p>
+  <div class="imgContainer">
+    <img src="../../../assets/beautybeast.jpg">
+    <img src="../../../assets/peterpan.jpg">
+    <img src="../../../assets/Out-of-the-Box.jpg">
+  </div>
 </section>
 </main>
-
-<app-stripe></app-stripe>

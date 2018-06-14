@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { Student } from '../../models/student';
 import { Observable, Subject } from 'rxjs';
+import { Scholarship } from '../../models/scholarship';
 
 @Component({
   selector: 'app-enrollment',
@@ -11,8 +12,10 @@ import { Observable, Subject } from 'rxjs';
 export class EnrollmentComponent implements OnInit {
   student: Subject<Student>
   studentArr: Array<Student>
+  scholArr: Array<Scholarship>
   scholarships: Boolean
   editStudent: Student
+  editScholarship: Scholarship
 
   constructor(
     private _httpService: HttpService,
@@ -21,12 +24,18 @@ export class EnrollmentComponent implements OnInit {
   ngOnInit(): void {
     this._httpService.getStudents().subscribe(students => {
       this.studentArr = Object.values(students)[0]
-      console.log(this.studentArr)
+    })
+    this._httpService.getScholarships().subscribe(scholarships => {
+      this.scholArr = Object.values(scholarships)[0]
     })
   }
 
-  edit(student) {
+  editStudentInfo(student) {
     this.editStudent = student
+  }
+
+  editScholInfo(scholarship) {
+    this.editScholarship = scholarship
   }
 
   update() {
@@ -40,9 +49,14 @@ export class EnrollmentComponent implements OnInit {
     }
   }
 
-  delete(student: Student): void {
+  deleteStudent(student: Student): void {
     this.studentArr = this.studentArr.filter(s => s !== student)
     this._httpService.deleteStudent(student.id).subscribe()
+  }
+
+  deleteScholarship(scholarship: Scholarship): void {
+    this.scholArr = this.scholArr.filter(s => s !== scholarship)
+    this._httpService.deleteScholarship(scholarship.id).subscribe()
   }
 
 }

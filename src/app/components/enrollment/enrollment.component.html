@@ -1,27 +1,60 @@
-<h2>Current Enrollment</h2>
-<section class="studentCard" *ngFor="let student of studentArr">
-  <div>
-    <span class="stripe1" *ngIf="student!==editStudent">Name: {{student.name}}</span>
-    <input class="stripe1" *ngIf="student===editStudent" [(ngModel)]="student.name">
+<main>
+  <div class="leftSide">
+    <h2 class="center">Current Enrollment</h2>
+    <section class="studentCard" *ngFor="let student of studentArr">
+      <div>
+        <span class="stripe1">Name: {{student.name}}</span>
+      </div>
+      <div>
+        Student ID: <span class="studentId">{{student.id}}</span>
+      </div>
+      <div>
+        <span class="stripe1">Age: {{student.age}}</span>
+      </div>
+      <div>
+        <span class="stripe1" *ngIf="student!==editStudent">Student Email: {{student.contactEmail}}</span>
+        <input class="stripe1" *ngIf="student===editStudent" [(ngModel)]="student.contactEmail">
+      </div>
+      <div>
+        <span class="stripe1">Emergency Contact: {{student.emergencyContact}} ({{student.contactRelation}})</span>
+      </div>
+      <div>
+        <span class="stripe1" *ngIf="student!==editStudent">Contact Phone: {{student.contactPhone}}</span>
+        <input class="stripe1" *ngIf="student===editStudent" [(ngModel)]="student.contactPhone">
+      </div>
+      <div>
+        Enrollment Date: {{student.enrolledOn}}
+      </div>
+      <div>
+        Payment Status:
+        <span class="stripe1" *ngIf="student.scholarship === true">Has scholarship.</span>
+        <span class="stripe1" *ngIf="student.scholarship !== true">Paid student.</span>
+      </div>
+      <div class="bContainer">
+        <button *ngIf="student!==editStudent" (click)=editStudentInfo(student)>Edit</button>
+        <button *ngIf="student===editStudent" (click)=update()>Save</button>
+        <button (click)=delete(student)>Delete</button>
+      </div>
+    </section>
   </div>
-  <div>
-    Student ID: <span class="studentId">{{student.id}}</span>
+  <div class="rightSide">
+    <h2>Scholarships</h2>
+    <section class="studentCard" *ngFor="let scholarship of scholArr">
+      <div>
+        <span class="stripe1">Name: {{scholarship.receivedBy}}</span>
+      </div>
+      <div>
+        Scholarship ID:
+        <span class="studentId">{{scholarship.id}}</span>
+      </div>
+      <div>
+        <span class="stripe1" *ngIf="student===editStudent">Verified By: {{scholarship.verifiedBy}}</span>
+      </div>
+      <div class="bContainer">
+        <button *ngIf="student!==editStudent" (click)=editScholInfo(scholarship)>Edit</button>
+        <button *ngIf="student===editStudent" (click)=update()>Save</button>
+        <button (click)=delete(student)>Delete</button>
+      </div>
+    </section>
   </div>
-  <div>
-    <span class="stripe1" *ngIf="student!==editStudent">Age: {{student.age}}</span>
-    <input class="stripe1" *ngIf="student===editStudent" [(ngModel)]="student.age">
-  </div>
-  <div>
-    Enrollment Date: {{student.enrolledOn}}
-  </div>
-  <div>
-    Payment Status:
-    <span class="stripe1" *ngIf="student.scholarship === true">Has scholarship.</span>
-    <span class="stripe1" *ngIf="student.scholarship !== true">Paid student.</span>
-  </div>
-  <div class="bContainer">
-    <button *ngIf="student!==editStudent" (click)=edit(student)>Edit</button>
-    <button *ngIf="student===editStudent" (click)=update()>Save</button>
-    <button (click)=delete(student)>Delete</button>
-  </div>
-</section>
+</main>

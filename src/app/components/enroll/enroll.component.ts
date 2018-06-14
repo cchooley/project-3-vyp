@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../../models/student';
 import { HttpService } from '../../services/http.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpModule, Http, URLSearchParams, Headers, RequestOptions } from '@angular/http';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'my-auth-token'
+  })
+};
 
 @Component({
   selector: 'app-enroll',
@@ -8,16 +18,6 @@ import { HttpService } from '../../services/http.service';
   styleUrls: ['./enroll.component.css']
 })
 export class EnrollComponent implements OnInit {
-  model: Student = {
-    id: 0,
-    name: '',
-    age: null,
-    enrolledOn: new Date(),
-    scholarship: true
-  }
-  studentArr: Array<Student>
-
-  constructor(private _httpService: HttpService) { }
 
   ngOnInit(): void {
     this._httpService.getStudents().subscribe(students => {
@@ -25,12 +25,30 @@ export class EnrollComponent implements OnInit {
     })
   }
 
+  studentArr: Array<Student>
+
+  model: Student = {
+    id: 0,
+    name: '',
+    age: null,
+    contactEmail: '',
+    emergencyContact: '',
+    contactRelation: '',
+    contactPhone: '',
+    enrolledOn: new Date,
+    scholarship: false
+  }
+
+
+  constructor(private _httpService: HttpService) { }
+
   trimDate(student) {
       return student.enrolledOn.slice(0, 10)
   }
 
   onClick(model): void {
     event.preventDefault()
+    model.id = this.studentArr.length + 1
     if (this.model.age >= 6 && this.model.age <= 13 && this.model.name !== '') {
       this._httpService.postStudent(this.model)
         .subscribe(student => this.studentArr.push(student))
@@ -38,6 +56,10 @@ export class EnrollComponent implements OnInit {
         id: 0,
         name: '',
         age: null,
+        contactEmail: '',
+        emergencyContact: '',
+        contactRelation: '',
+        contactPhone: '',
         enrolledOn: null,
         scholarship: false
       }
@@ -45,4 +67,7 @@ export class EnrollComponent implements OnInit {
       alert("Please fill in the required fields with a valid name and age.")
     }
   }
+
 }
+
+
