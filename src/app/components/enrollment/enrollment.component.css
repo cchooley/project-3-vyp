@@ -16,7 +16,7 @@ h2 {
     margin: 15px;
 }
     
-.studentCard {
+.studentCard, .scholCard {
     min-width: 60%;
     border: 1px #765B7F solid;
     background-color: rgb(196, 188, 199);

@@ -37,6 +37,10 @@ export class HttpService {
     return this._http.post<Student>(`${this.url}/students`, student, httpOptions)
     }
 
+  postScholarship(scholarship: Scholarship): Observable<Scholarship> {
+    return this._http.post<Scholarship>(`${this.url}/scholarships`, scholarship, httpOptions)
+  }
+
   updateStudent(student: Student): Observable<Student> {
     httpOptions.headers = 
       httpOptions.headers.set('Authorization', 'my-new-auth-token')

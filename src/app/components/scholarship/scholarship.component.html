@@ -1,0 +1,38 @@
+<main>
+    <section class="leftSide">
+        <h2>Enroll today!</h2>
+        <form #jobForm="ngForm">
+            <label for="name">Student Name:</label>
+            <input type="text" name="name" id="sName" [(ngModel)]="model.name">
+            <label for="age">Student Age:</label>
+            <input type="number" name="age" id="sAge" [(ngModel)]="model.age">
+            <label for="email">Student E-Mail:</label>
+            <input type="text" name="email" id="sEmail" [(ngModel)]="model.contactEmail">
+            <label for="emergencyContact">Emergency Contact:</label>
+            <input type="text" name="emergencyContact" id="sEContact" [(ngModel)]="model.emergencyContact">
+            <label for="relationship">Contact Relation:</label>
+            <select name="relationship" id="sGuardian" [(ngModel)]="model.contactRelation">
+                <option>Father</option>
+                <option>Mother</option>
+                <option>Legal Guardian</option>
+            </select>
+            <label for="contactPhone">Contact Phone:</label>
+            <input type="text" name="contactPhone" id="sCPhone" [(ngModel)]="model.contactPhone">
+            <input type="submit" class="sLink" name="submit" value="Enroll!" (click)="onClick(this.model)">
+            <a class="sLink" value="Scholarship" *ngIf="model.scholarship === true" routerLink="/scholarship" routerLinkActive="active">Scholarship</a>
+        </form>
+    </section>
+    <section class="rightSide">
+        <h3>You're just a few steps away from an unforgettable learning experience!</h3>
+        <p>Please fill out the form to your left with your student's full name, age (ages 6-13 only), and your method of payment.</p>
+        <p>Scholarship students will be contacted by an instructor to verify scholarship information.</p>
+        <p>All other enrollees must provide a check made out to "Vintage Theatre Productions, Inc." in the amount of $325 no
+            later than the first day of class.
+        </p>
+        <div class="imgContainer">
+            <img src="../../../assets/beautybeast.jpg">
+            <img src="../../../assets/peterpan.jpg">
+            <img src="../../../assets/Out-of-the-Box.jpg">
+        </div>
+    </section>
+</main>

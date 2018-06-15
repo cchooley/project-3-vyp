@@ -5,8 +5,8 @@ import { HomeComponent } from './components/home/home.component'
 import { SeussicalComponent } from './components/seussical/seussical.component';
 import { AboutComponent } from './components/about/about.component';
 import { EnrollComponent } from './components/enroll/enroll.component';
-import { ScholarshipComponent } from './components/scholarship/scholarship.component';
 import { EnrollmentComponent } from './components/enrollment/enrollment.component';
+import { ScholarshipComponent } from './components/scholarship/scholarship.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },

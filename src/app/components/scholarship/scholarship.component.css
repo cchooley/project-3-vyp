@@ -1,0 +1,92 @@
+main {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    background-color: #e0e0e0
+}
+
+section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px 20px 30px 20px;
+    background-color: #FFD49E;
+    border: 3px #765B7F solid;
+    min-width: 25%
+}
+
+form {
+    display: flex;
+    flex-flow: column
+}
+
+input, label, select {
+    margin: 3px 0px;
+}
+
+input, select {
+    background-color: #E5ECFF
+}
+
+.sLink {
+    margin-top: 10px;
+    text-decoration: none;
+    padding: 15px 15px 5px 15px;
+    border-radius: 25px;
+    color: #FFFF21;
+    background-color: #F2203B;
+    font-family: 'Lakki Reddy', cursive;
+    font-size: 20px;
+    border: 2px black solid;
+    animation: changeBack 1s;
+}
+
+.sLink:hover {
+    background-color: #A7C7E5;
+    animation-name: change;
+    animation-duration: 1s;
+    transform: rotate(2deg)
+}
+
+@keyframes change {
+    from {
+        background-color: #F2203B; 
+        transform: rotate(0deg)
+    }
+    to {background-color: #A7C7E5; 
+        transform: rotate(2deg)
+    }
+}
+
+@keyframes changeBack {
+    from {background-color: #A7C7E5; 
+        transform: rotate(2deg)
+    }
+    to {
+    background-color: #F2203B; 
+    transform: rotate(0deg)
+    }
+}
+
+.rightSide {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    width: 70%
+}
+
+.imgContainer {
+    display: flex;
+    flex-flow: row;
+    padding: 20px;
+    width: 100%;
+    justify-content: space-evenly
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+    border: 3px #765B7F solid;
+}
