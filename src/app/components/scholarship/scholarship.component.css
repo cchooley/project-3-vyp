@@ -10,12 +10,13 @@ section {
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    margin: 20px;
+    margin: 10px;
     padding: 10px 20px 30px 20px;
     background-color: #FFD49E;
     border: 3px #765B7F solid;
     min-width: 25%
 }
+
 
 form {
     display: flex;

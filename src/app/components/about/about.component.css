@@ -1,3 +1,11 @@
+
+.about, .staff {
+    background-color: #FFD49E;
+    padding: 10px;
+    border: 3px #765B7F solid;
+    margin: 10px
+}
+
 .staffCard {
     display: flex;
     flex-flow: row;

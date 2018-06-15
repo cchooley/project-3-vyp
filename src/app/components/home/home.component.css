@@ -2,10 +2,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column
+    flex-flow: column;
+    margin: 25px;
 }
+
+
 
 .subNav {
     margin: 20px;
     padding: 8px;
+}
+
+.seussicalImg {
+    animation: fadeIn 3s
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
