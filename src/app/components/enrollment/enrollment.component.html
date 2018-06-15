@@ -1,6 +1,6 @@
 <main>
   <div class="leftSide">
-    <h2 class="center">Current Enrollment</h2>
+    <h2 class="center">Paid Enrollment</h2>
     <section class="studentCard" *ngFor="let student of studentArr">
       <div>
         <span>Name: {{student.name}}</span>
@@ -66,11 +66,18 @@
         Enrollment Date: {{scholarship.enrolledOn}}
       </div>
       <div>
-        Payment Status: {{scholarship.verifiedBy}}
+        <span *ngIf="scholarship!==editScholarship">Verified By: {{scholarship.verifiedBy}}</span>
+        <select *ngIf="scholarship===editScholarship" [(ngModel)]="scholarship.verifiedBy">
+          <option disabled>Instructor</option>
+          <option>Liz Nye</option>
+          <option>Deb Flomberg</option>
+          <option>Seth Maisel</option>
+          <option>Jackie DiSalvo</option>
+        </select>
       </div>
       <div class="bContainer">
         <button *ngIf="scholarship!==editScholarship" (click)=editScholInfo(scholarship)>Edit</button>
-        <button *ngIf="scholarship===editScholarship" (click)=updateStudent()>Save</button>
+        <button *ngIf="scholarship===editScholarship" (click)=updateScholarship()>Save</button>
         <button (click)=deleteScholarship(scholarship)>Delete</button>
       </div>
     </section>

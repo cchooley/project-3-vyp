@@ -7,5 +7,5 @@ export interface Student {
     contactRelation: string;
     contactPhone: string;
     enrolledOn: Date;
-    scholarship: boolean
+    paymentStatus: boolean
 }

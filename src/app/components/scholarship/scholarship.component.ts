@@ -36,7 +36,7 @@ export class ScholarshipComponent implements OnInit {
     contactRelation: '',
     contactPhone: '',
     enrolledOn: new Date,
-    verifiedBy: "Please Verify"
+    verifiedBy: "Scholarship Pending"
   }
 
 
@@ -67,7 +67,7 @@ export class ScholarshipComponent implements OnInit {
         contactRelation: '',
         contactPhone: '',
         enrolledOn: null,
-        verifiedBy: "Please Verify"
+        verifiedBy: "Scholarship Pending"
       }
     } else {
       alert("Please fill in all required fields as instructed")
