@@ -19,7 +19,6 @@
             <label for="contactPhone">Contact Phone:</label>
             <input type="text" name="contactPhone" id="sCPhone" [(ngModel)]="model.contactPhone">
             <input type="submit" class="sLink" name="submit" value="Enroll!" (click)="onClick(this.model)">
-            <a class="sLink" value="Scholarship" *ngIf="model.scholarship === true" routerLink="/scholarship" routerLinkActive="active">Scholarship</a>
         </form>
     </section>
     <section class="rightSide">
