@@ -1,27 +1,19 @@
-# P3Vyp
+Galvanize Tower
+In this project, you'll build a full-stack application that has an API, reads and writes data, and uses a library. The topic is up to you!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Requirements
+Has an API that can list, read, update, create, and delete data
+Has a database backing that API that has at least 2 different tables
+Has a front-end that uses an application framework or component library that:
+Consumes your API (list, read, update, create, and delete actions)
+Uses some non-trivial (charting, mapping, payment, etc.) library
+Has at least 2 end-to-end tests
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Add a link to: 
+- Your deployed front-end URL: 
+    https://vypproject3.firebaseapp.com
+- Your deployed API URL: 
+    https://vypheroku.herokuapp.com/students, https://vypheroku.herokuapp.com/scholarships
+- Any code repos you used: 
+    https://github.com/cchooley/project-3-vyp,
+    https://github.com/cchooley/vyp-server
