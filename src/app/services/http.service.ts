@@ -1,17 +1,16 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { HttpModule, Http, URLSearchParams, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs';
-import { Subject } from 'rxjs';
-import { Student } from '../models/student';
-import { Scholarship } from '../models/scholarship';
+import { Injectable } from '@angular/core'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Observable } from 'rxjs'
+import { Subject } from 'rxjs'
+import { Student } from '../models/student'
+import { Scholarship } from '../models/scholarship'
 
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': 'my-auth-token'
   })
-};
+}
 
 @Injectable({
   providedIn: 'root'

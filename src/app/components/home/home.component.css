@@ -6,15 +6,13 @@
     margin: 25px;
 }
 
-
-
 .subNav {
     margin: 20px;
     padding: 8px;
 }
 
 .seussicalImg {
-    animation: fadeIn 3s
+    animation: fadeIn 3s;
 }
 
 @keyframes fadeIn {

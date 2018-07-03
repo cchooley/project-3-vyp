@@ -1,4 +1,4 @@
 export interface DataSource {
     chart: Object
-    data: Object;
+    data: Object
 }

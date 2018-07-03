@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../../services/http.service';
-import { Student } from '../../models/student';
-import { DataSource } from '../../models/data';
-import { Subject } from 'rxjs';
-import { Scholarship } from '../../models/scholarship';
-declare var fusioncharts: any;
+import { Component, OnInit } from '@angular/core'
+import { HttpService } from '../../services/http.service'
+import { Student } from '../../models/student'
+import { DataSource } from '../../models/data'
+import { Subject } from 'rxjs'
+import { Scholarship } from '../../models/scholarship'
+declare var fusioncharts: any
 
 @Component({
   selector: 'app-enrollment',
@@ -22,7 +22,7 @@ export class EnrollmentComponent implements OnInit {
   title: string
 
   constructor(
-    private _httpService: HttpService,
+    private _httpService: HttpService
   ) {
     this.dataSource = {
       "chart": {
@@ -62,10 +62,10 @@ export class EnrollmentComponent implements OnInit {
     if (this.editStudent) {
       this._httpService.updateStudent(this.editStudent)
         .subscribe(student => {
-          const ix = student ? this.studentArr.findIndex(s => s.id === student.id) : -1;
-          if (ix > -1) { this.studentArr[ix] = student; }
-        });
-      this.editStudent = undefined;
+          const ix = student ? this.studentArr.findIndex(s => s.id === student.id) : -1
+          if (ix > -1) { this.studentArr[ix] = student }
+        })
+      this.editStudent = undefined
     }
   }
 
@@ -73,10 +73,10 @@ export class EnrollmentComponent implements OnInit {
     if (this.editScholarship) {
       this._httpService.updateScholarship(this.editScholarship)
         .subscribe(scholarship => {
-          const ix = scholarship ? this.studentArr.findIndex(s => s.id === scholarship.id) : -1;
-          if (ix > -1) { this.scholArr[ix] = scholarship; }
-        });
-      this.editScholarship = undefined;
+          const ix = scholarship ? this.studentArr.findIndex(s => s.id === scholarship.id) : -1
+          if (ix > -1) { this.scholArr[ix] = scholarship }
+        })
+      this.editScholarship = undefined
     }
   }
 

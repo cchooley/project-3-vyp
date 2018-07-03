@@ -1,7 +1,7 @@
 <main>
     <section class="leftSide">
         <h2>Enroll today!</h2>
-        <form #jobForm="ngForm">
+        <form #scholForm="ngForm">
             <label for="name">Student Name:</label>
             <input type="text" name="name" id="sName" [(ngModel)]="model.name">
             <label for="age">Student Age:</label>
@@ -18,7 +18,8 @@
             </select>
             <label for="contactPhone">Contact Phone:</label>
             <input type="text" name="contactPhone" id="sCPhone" [(ngModel)]="model.contactPhone">
-            <input type="submit" class="sLink" name="submit" value="Enroll!" (click)="onClick(this.model)">
+            <input type="submit" class="sLink" name="submit" value="Enroll!" 
+            (click)="onClick(this.model); scholForm.reset()">
         </form>
     </section>
     <section class="rightSide">

@@ -2,7 +2,7 @@ main {
     display: flex;
     flex-flow: row;
     justify-content: space-around;
-    background-color: #e0e0e0
+    background-color: #e0e0e0;
 }
 
 section {
@@ -14,12 +14,12 @@ section {
     padding: 10px 20px 30px 20px;
     background-color: #FFD49E;
     border: 3px #765B7F solid;
-    min-width: 25%
+    min-width: 25%;
 }
 
 form {
     display: flex;
-    flex-flow: column
+    flex-flow: column;
 }
 
 input, label, select {
@@ -27,7 +27,7 @@ input, label, select {
 }
 
 input, select {
-    background-color: #E5ECFF
+    background-color: #E5ECFF;
 }
 
 .sLink {
@@ -53,20 +53,22 @@ input, select {
 @keyframes change {
     from {
         background-color: #F2203B; 
-        transform: rotate(0deg)
+        transform: rotate(0deg);
     }
-    to {background-color: #A7C7E5; 
-        transform: rotate(2deg)
+    to {
+        background-color: #A7C7E5; 
+        transform: rotate(2deg);
     }
 }
 
 @keyframes changeBack {
-    from {background-color: #A7C7E5; 
-        transform: rotate(2deg)
+    from {
+        background-color: #A7C7E5; 
+        transform: rotate(2deg);
     }
     to {
-    background-color: #F2203B; 
-    transform: rotate(0deg)
+        background-color: #F2203B; 
+        transform: rotate(0deg);
     }
 }
 
@@ -74,19 +76,18 @@ input, select {
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
-    width: 70%
+    max-width: 70%;
 }
 
 .imgContainer {
     display: flex;
     flex-flow: row;
-    padding: 20px;
     width: 100%;
-    justify-content: space-evenly
+    justify-content: space-evenly;
 }
 
 img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 30vw;
+    height: 30vh;
     border: 3px #765B7F solid;
 }

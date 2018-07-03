@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Scholarship } from '../../models/scholarship';
-import { HttpService } from '../../services/http.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { HttpModule, Http, URLSearchParams, Headers, RequestOptions } from '@angular/http';
-
+import { Component, OnInit } from '@angular/core'
+import { Scholarship } from '../../models/scholarship'
+import { HttpService } from '../../services/http.service'
+import { HttpHeaders } from '@angular/common/http'
 
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': 'my-auth-token'
   })
-};
+}
 
 @Component({
   selector: 'app-scholarship',
@@ -36,9 +34,8 @@ export class ScholarshipComponent implements OnInit {
     contactRelation: '',
     contactPhone: '',
     enrolledOn: new Date,
-    verifiedBy: "Scholarship Pending"
+    verifiedBy: 'Scholarship Pending'
   }
-
 
   constructor(private _httpService: HttpService) { }
 
@@ -58,22 +55,10 @@ export class ScholarshipComponent implements OnInit {
       && this.model.contactPhone.length === 10) {
       this._httpService.postScholarship(this.model)
         .subscribe(scholarship => this.scholArr.push(scholarship))
-      this.model = {
-        id: 0,
-        name: '',
-        age: null,
-        contactEmail: '',
-        emergencyContact: '',
-        contactRelation: '',
-        contactPhone: '',
-        enrolledOn: null,
-        verifiedBy: "Scholarship Pending"
-      }
     } else {
-      alert("Please fill in all required fields as instructed")
+      alert('Please fill in all required fields as instructed')
     }
   }
-
 }
 
 

@@ -1,7 +1,7 @@
 main {
     display: flex;
     flex-flow: row;
-    width: 100%
+    width: 100%;
 }
 
 .leftSide, .rightSide {
@@ -9,8 +9,7 @@ main {
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: flex-start
-
+    justify-content: flex-start;
 }
 
 h2 {
@@ -22,7 +21,7 @@ h2 {
     border: 1px #765B7F solid;
     background-color: rgb(196, 188, 199);
     list-style-type: none;
-    margin: 15px
+    margin: 15px;
 }
 
 button {
@@ -49,7 +48,7 @@ div:nth-of-type(odd) {
 }
 
 div:nth-of-type(even) {
-    background: #FFD49E
+    background: #FFD49E;
 }
 
 input {
@@ -61,5 +60,5 @@ input {
     display: flex;
     align-content: center;
     justify-content: center;
-    margin: 20px
+    margin: 20px;
 }

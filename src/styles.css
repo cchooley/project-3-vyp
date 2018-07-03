@@ -3,7 +3,7 @@
 }
 
 *:focus {
-    outline:0
+    outline:0;
 }
 
 .seussicalImg {
@@ -14,7 +14,7 @@
 
 .header {
     font-weight: 300;
-    text-align: center
+    text-align: center;
 }
 
 .bodyText {
@@ -22,11 +22,11 @@
 }
 
 .bold {
-    font-weight: bold
+    font-weight: bold;
 }
 
 .center {
-    text-align: center
+    text-align: center;
 }
 
 .sLink {
@@ -46,26 +46,26 @@
     background-color: #A7C7E5;
     animation-name: change;
     animation-duration: 1s;
-    transform: rotate(2deg)
+    transform: rotate(2deg);
 }
 
 @keyframes change {
     from {
         background-color: #F2203B; 
-        transform: rotate(0deg)
+        transform: rotate(0deg);
     }
     to {background-color: #A7C7E5; 
-        transform: rotate(2deg)
+        transform: rotate(2deg);
     }
 }
 
 @keyframes changeBack {
     from {background-color: #A7C7E5; 
-        transform: rotate(2deg)
+        transform: rotate(2deg);
     }
     to {
     background-color: #F2203B; 
-    transform: rotate(0deg)
+    transform: rotate(0deg);
     }
 }
 
