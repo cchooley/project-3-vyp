@@ -1,19 +1,27 @@
-Galvanize Tower
-In this project, you'll build a full-stack application that has an API, reads and writes data, and uses a library. The topic is up to you!
+# VYP - Seussical, The Musical!
 
-Requirements
-Has an API that can list, read, update, create, and delete data
-Has a database backing that API that has at least 2 different tables
-Has a front-end that uses an application framework or component library that:
-Consumes your API (list, read, update, create, and delete actions)
-Uses some non-trivial (charting, mapping, payment, etc.) library
-Has at least 2 end-to-end tests
+![site image](seussical.png)
 
-Add a link to: 
-- Your deployed front-end URL: 
-    https://vypproject3.firebaseapp.com
-- Your deployed API URL: 
-    https://vypheroku.herokuapp.com/students, https://vypheroku.herokuapp.com/scholarships
-- Any code repos you used: 
-    https://github.com/cchooley/project-3-vyp,
-    https://github.com/cchooley/vyp-server
+## About
+This is a full-stack app that was built for Aurora, CO's Vintage Theatre, one of the largest non-profit live theatres in Colorado.
+
+Vintage required a means of tracking the registry for their Youth Program's summer camp, which accepts both paid enrollees as well as scholarship students.
+
+## Installation
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8. To get the Angular CLI, run `npm install -g @angular/cli`
+
+Run `npm install` to install dependencies.
+
+## Serving
+
+Run `ng serve` for a dev client server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## API
+
+- https://vypheroku.herokuapp.com/students
+- https://vypheroku.herokuapp.com/scholarships
+
+## Contact info
+cchooley@gmail.com
+https://www.linkedin.com/in/conor-hooley/
