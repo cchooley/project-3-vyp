@@ -17,11 +17,21 @@ Run `npm install` to install dependencies.
 
 Run `ng serve` for a dev client server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Tech Used
+- Angular 6
+- TypeScript
+- Express
+- Knex
+- PostgreSQL
+- Node.js
+- Heroku
+- Firebase
+
 ## API
 
 - https://vypheroku.herokuapp.com/students
 - https://vypheroku.herokuapp.com/scholarships
 
 ## Contact info
-cchooley@gmail.com
-https://www.linkedin.com/in/conor-hooley/
+- cchooley@gmail.com
+- https://www.linkedin.com/in/conor-hooley/
